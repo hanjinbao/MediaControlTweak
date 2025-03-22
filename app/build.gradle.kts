@@ -18,22 +18,11 @@ android {
         versionName = "1.4.0"
     }
     signingConfigs {
-        release {
-            // 检查是否在 CI 环境中运行（GitHub Actions）
-            if (System.getenv("CI")) {
-                // 这些将由 GitHub Actions 工作流提供
-                storeFile = file("../keystore.jks")
-                storePassword = System.getenv("KEY_STORE_PASSWORD")
-                keyAlias = System.getenv("KEY_ALIAS")
-                keyPassword = System.getenv("KEY_PASSWORD")
-            } else {
-                // 本地开发时，可以在 local.properties 中设置这些属性
-                // 或者在不进行本地发布构建时注释掉此部分
-                storeFile = null
-                storePassword = ""
-                keyAlias = ""
-                keyPassword = ""
-            }
+        register("release") {
+            enableV1Signing = true
+            enableV2Signing = true
+            enableV3Signing = true
+            enableV4Signing = true
         }
     }
     buildTypes {
