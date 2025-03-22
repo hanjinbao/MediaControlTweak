@@ -148,7 +148,7 @@ class MainHook : IXposedHookZygoteInit, IXposedHookLoadPackage {
                     val context = AndroidAppHelper.currentApplication().applicationContext
                     val drawableToBitmap = drawableToBitmap(thumb)
                     seekBar?.thumb = BitmapDrawable(
-                        context.resources, drawableToBitmap.scale(4.dp, 16.dp)
+                        context.resources, drawableToBitmap.scale(4.dp, 4.dp)
                     )
                     seekBar?.progressDrawable = SquigglyProgress().apply {
                         waveLength =
