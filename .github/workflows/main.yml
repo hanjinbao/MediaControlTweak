@@ -25,5 +25,5 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          file: app/build/outputs/apk/debug/*.apk  # 通配符需 action 支持
+          file: app/build/outputs/apk/debug/media-control-tweak-1.4.0-debug.apk  # 通配符需 action 支持
           tag: ${{ github.ref }}
